@@ -57,6 +57,15 @@
     return browserLang.startsWith('hu') ? 'hu' : 'en';
   }
 
+  function updateCvDownloadLinks(lang) {
+    var filename = lang === 'hu' ? 'Richard_Eszes_Software_Developer_CV_HU.pdf' : 'Richard_Eszes_Software_Developer_CV_EN.pdf';
+    var path = 'assets/cv/' + filename;
+    document.querySelectorAll('.cv-download-btn').forEach(function (btn) {
+      btn.setAttribute('href', path);
+      btn.setAttribute('download', filename);
+    });
+  }
+
   function applyLanguage(lang) {
     document.documentElement.setAttribute('data-lang', lang);
     document.documentElement.setAttribute('lang', lang);
@@ -77,6 +86,8 @@
         langHuBtn.classList.add.apply(langHuBtn.classList, inactiveClasses);
       }
     }
+
+    updateCvDownloadLinks(lang);
   }
 
   applyLanguage(getPreferredLanguage());
