@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 selection:bg-zinc-900 selection:text-white dark:selection:bg-zinc-100 dark:selection:text-zinc-900;
+  }
+}
+
+/* Kétnyelvűség vezérlése: hibátlan rejtés */
+html[data-lang="hu"] [data-i18n-en] {
+  display: none !important;
+}
+
+html[data-lang="en"] [data-i18n-hu] {
+  display: none !important;
+}
+
+/* Finom üveg (glassmorphism) és kártya effektek */
+.glass-nav {
+  @apply backdrop-blur-md bg-white/75 dark:bg-zinc-950/75 border-b border-zinc-200/80 dark:border-zinc-800/80;
+}
+
+.modern-card {
+  @apply rounded-2xl border border-zinc-200/90 dark:border-zinc-800/90 bg-white dark:bg-zinc-900/60 shadow-sm transition-all duration-200 hover:border-zinc-400/80 dark:hover:border-zinc-600/80;
+}

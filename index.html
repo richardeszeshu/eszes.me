@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="hu" data-lang="hu" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eszes Richárd &mdash; Senior Software Developer</title>
+  <meta name="description" content="Eszes Richárd szoftverfejlesztő oldala. 10+ év backend tapasztalat, Laravel, Yii2, Domain-Driven Design (DDD), ipari MES rendszerek és gazdasági tanulmányok.">
+  <meta name="author" content="Eszes Richárd">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://eszes.me/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Eszes Richárd">
+  <meta property="og:title" content="Eszes Richárd &mdash; Senior Software Developer">
+  <meta property="og:description" content="Szoftverfejlesztő 10+ év backend tapasztalattal. Laravel, Yii2, MES rendszerek, tiszta architektúra és gazdasági tanulmányok.">
+  <meta property="og:url" content="https://eszes.me/">
+  <meta property="og:image" content="https://eszes.me/assets/images/profile.jpg">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Eszes Richárd &mdash; Senior Software Developer">
+  <meta name="twitter:description" content="Software Developer with 10+ years backend experience. Laravel, Yii2, MES systems, clean architecture.">
+  <meta name="twitter:image" content="https://eszes.me/assets/images/profile.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Eszes Richárd",
+    "alternateName": "Richárd Eszes",
+    "jobTitle": "Senior Software Developer",
+    "url": "https://eszes.me/",
+    "image": "https://eszes.me/assets/images/profile.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/richardeszes/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pécs",
+      "addressCountry": "HU"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Pécsi Tudományegyetem, Közgazdaságtudományi Kar (PTE KTK)"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Lia Alapítványi Szakközépiskola"
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('site-theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = savedTheme ? savedTheme === 'dark' : systemDark;
+      document.documentElement.classList.toggle('dark', isDark);
+
+      const savedLang = localStorage.getItem('site-lang');
+      const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      const lang = savedLang || (browserLang.startsWith('hu') ? 'hu' : 'en');
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top" class="min-h-screen bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100 selection:bg-zinc-900 selection:text-white dark:selection:bg-zinc-100 dark:selection:text-zinc-900">
+
+  <header class="sticky top-0 z-50 w-full glass-nav">
+    <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-3.5">
+      <a href="#top" class="group flex items-center gap-2.5 font-medium tracking-tight text-zinc-900 dark:text-zinc-100">
+        <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-zinc-900 text-xs font-mono font-bold text-white transition-transform group-hover:scale-105 dark:bg-zinc-100 dark:text-zinc-900">re</span>
+        <span class="text-sm font-semibold">eszes.me</span>
+      </a>
+
+      <nav aria-label="Fő navigáció" class="hidden md:flex items-center gap-6 text-sm text-zinc-600 dark:text-zinc-400">
+        <a href="#about" class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Rólam</span>
+          <span data-i18n-en>About</span>
+        </a>
+        <a href="#experience" class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Tapasztalat</span>
+          <span data-i18n-en>Experience</span>
+        </a>
+        <a href="#projects" class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Projektek</span>
+          <span data-i18n-en>Projects</span>
+        </a>
+        <a href="#skills" class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Készségek</span>
+          <span data-i18n-en>Skills</span>
+        </a>
+        <a href="#education" class="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Tanulmányok</span>
+          <span data-i18n-en>Education</span>
+        </a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <div class="flex items-center rounded-lg border border-zinc-200/90 bg-zinc-100/80 p-0.5 text-xs font-mono dark:border-zinc-800/90 dark:bg-zinc-900/80" role="group" aria-label="Nyelvválasztás">
+          <button id="lang-btn-hu" type="button" class="rounded-md px-2 py-1 transition-all" aria-label="Magyar nyelv">HU</button>
+          <button id="lang-btn-en" type="button" class="rounded-md px-2 py-1 transition-all" aria-label="English language">EN</button>
+        </div>
+
+        <button id="theme-toggle" type="button" class="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-200/90 bg-white text-zinc-600 transition-colors hover:border-zinc-400 hover:text-zinc-900 dark:border-zinc-800/90 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-100" aria-label="Téma váltása">
+          <svg id="sun-icon" class="h-4 w-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg id="moon-icon" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <a href="assets/cv/Eszes_Richard_CV.pdf" download class="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-zinc-900 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white">
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span data-i18n-hu>Önéletrajz</span>
+          <span data-i18n-en>Resume</span>
+        </a>
+
+        <button id="mobile-toggle" type="button" class="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-200 text-zinc-600 md:hidden dark:border-zinc-800 dark:text-zinc-400" aria-label="Menü megnyitása" aria-expanded="false">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobile-nav" class="hidden border-b border-zinc-200 px-6 py-4 md:hidden dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95">
+      <div class="flex flex-col gap-3 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+        <a href="#about" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Rólam</span>
+          <span data-i18n-en>About</span>
+        </a>
+        <a href="#experience" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Tapasztalat</span>
+          <span data-i18n-en>Experience</span>
+        </a>
+        <a href="#projects" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Projektek</span>
+          <span data-i18n-en>Projects</span>
+        </a>
+        <a href="#skills" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Készségek</span>
+          <span data-i18n-en>Skills</span>
+        </a>
+        <a href="#education" class="py-1 hover:text-zinc-900 dark:hover:text-zinc-100">
+          <span data-i18n-hu>Tanulmányok</span>
+          <span data-i18n-en>Education</span>
+        </a>
+        <a href="assets/cv/Eszes_Richard_CV.pdf" download class="py-1 text-zinc-900 dark:text-zinc-100 font-semibold">
+          <span data-i18n-hu>&darr; Önéletrajz (PDF)</span>
+          <span data-i18n-en>&darr; Download Resume (PDF)</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-4xl px-6 py-12 sm:py-16 space-y-20">
+
+    <section id="hero" aria-labelledby="hero-name" class="space-y-8">
+      <div class="flex flex-col-reverse gap-8 sm:flex-row sm:items-start sm:justify-between">
+        <div class="space-y-4 max-w-2xl">
+          <h1 id="hero-name" class="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-50">
+            <span data-i18n-hu>Eszes Richárd</span>
+            <span data-i18n-en>Richárd Eszes</span>
+          </h1>
+
+          <p class="text-lg font-medium text-zinc-700 dark:text-zinc-300">
+            <span data-i18n-hu>Senior Szoftverfejlesztő &bull; Backend Rendszerarchitektúra</span>
+            <span data-i18n-en>Senior Software Developer &bull; Backend System Architecture</span>
+          </p>
+
+          <p class="text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <span data-i18n-hu>
+              Több mint 10 év tapasztalattal rendelkezem komplex ipari rendszerek (MES), nagy rendelkezésre állású Laravel és Yii2 backend platformok tervezésében és megvalósításában. A tiszta kódolási elveket (DDD, SOLID) gazdálkodási és menedzsment szemlélettel ötvözöm.
+            </span>
+            <span data-i18n-en>
+              I have over 10 years of experience in designing and implementing complex industrial execution systems (MES), high-availability Laravel and Yii2 backend platforms. I combine clean coding principles (DDD, SOLID) with a business and management perspective.
+            </span>
+          </p>
+
+          <address class="not-italic flex flex-wrap items-center gap-3 pt-2">
+            <div class="relative inline-flex">
+              <a href="#" class="email-link inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-xs font-mono text-zinc-700 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-zinc-600" data-u="richard" data-d="eszes.me" aria-label="E-mail">
+                <svg class="h-3.5 w-3.5 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span class="email-text"></span>
+              </a>
+              <button id="copy-email-btn" type="button" title="Másolás vágólapra" class="ml-1 inline-flex items-center justify-center rounded-lg border border-zinc-200 bg-white px-2 py-1.5 text-xs text-zinc-500 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100" aria-label="E-mail cím másolása">
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </button>
+              <span id="copy-feedback" class="absolute -top-7 left-0 rounded bg-zinc-900 px-2 py-0.5 text-xs text-white opacity-0 transition-opacity pointer-events-none dark:bg-zinc-100 dark:text-zinc-900">Másolva!</span>
+            </div>
+
+            <a href="tel:+36305339792" class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-xs font-mono text-zinc-700 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-zinc-600">
+              <svg class="h-3.5 w-3.5 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              +36 30 533 9792
+            </a>
+
+            <a href="https://www.linkedin.com/in/richardeszes/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition-colors hover:border-zinc-400 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:border-zinc-600">
+              <svg class="h-3.5 w-3.5 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </address>
+        </div>
+
+        <div class="shrink-0 self-center sm:self-start">
+          <div class="relative overflow-hidden rounded-2xl border border-zinc-200/90 p-1 bg-white shadow-sm dark:border-zinc-800/90 dark:bg-zinc-900">
+            <img 
+              src="assets/images/profile.jpg" 
+              alt="Eszes Richárd" 
+              class="h-32 w-32 rounded-xl object-cover object-center transition-transform duration-300 hover:scale-105"
+              width="128"
+              height="128"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-4 pt-6 border-t border-zinc-200/80 dark:border-zinc-800/80">
+        <div>
+          <span class="block text-xs font-mono text-zinc-500 dark:text-zinc-400" data-i18n-hu>TAPASZTALAT</span>
+          <span class="block text-xs font-mono text-zinc-500 dark:text-zinc-400" data-i18n-en>EXPERIENCE</span>
+          <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-hu>10+ év szakmai múlt</span>
+          <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-en>10+ years professional experience</span>
+        </div>
+        <div>
+          <span class="block text-xs font-mono text-zinc-500 dark:text-zinc-400" data-i18n-hu>FŐ STACK</span>
+          <span class="block text-xs font-mono text-zinc-500 dark:text-zinc-400" data-i18n-en>CORE STACK</span>
+          <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">PHP, Laravel, Yii2, DDD</span>
+        </div>
+        <div>
+          <span class="block text-xs font-mono text-zinc-500 dark:text-zinc-400" data-i18n-hu>EGYETEMI TANULMÁNYOK</span>
+          <span class="block text-xs font-mono text-zinc-500 dark:text-zinc-400" data-i18n-en>UNIVERSITY STUDIES</span>
+          <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-hu>PTE KTK &bull; BSc (folyamatban)</span>
+          <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-en>PTE KTK &bull; BSc (in progress)</span>
+        </div>
+        <div>
+          <span class="block text-xs font-mono text-zinc-500 dark:text-zinc-400" data-i18n-hu>LOKÁCIÓ</span>
+          <span class="block text-xs font-mono text-zinc-500 dark:text-zinc-400" data-i18n-en>LOCATION</span>
+          <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-hu>Pécs, Magyarország</span>
+          <span class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-en>Pécs, Hungary</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title" class="space-y-6">
+      <header>
+        <h2 id="about-title" class="text-xs font-mono font-medium uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          <span data-i18n-hu>01 &mdash; Rólam</span>
+          <span data-i18n-en>01 &mdash; About</span>
+        </h2>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="modern-card p-5 space-y-2">
+          <div class="text-xs font-mono text-zinc-400 dark:text-zinc-500">
+            <span data-i18n-hu>FEJLESZTÉS</span>
+            <span data-i18n-en>ENGINEERING</span>
+          </div>
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-hu>Tiszta kód &amp; DDD</h3>
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-en>Clean Code &amp; DDD</h3>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+            Domain-Driven Design módszertan, SOLID tervezési elvek, és automatizált tesztelés (PHPUnit, Cypress) a hosszú távon is karbantartható kódbázisokért.
+          </p>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+            Domain-Driven Design methodology, SOLID design principles, and automated testing (PHPUnit, Cypress) for long-term maintainable codebases.
+          </p>
+        </div>
+
+        <div class="modern-card p-5 space-y-2">
+          <div class="text-xs font-mono text-zinc-400 dark:text-zinc-500">
+            <span data-i18n-hu>MŰKÖDÉS</span>
+            <span data-i18n-en>OPERATIONS</span>
+          </div>
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-hu>MES &amp; Gyógyszeripari QA</h3>
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-en>MES &amp; Pharmaceutical QA</h3>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+            Valós idejű termeléskövetés ipari környezetben, valamint szigorú gyógyszeripari GMP előírásoknak megfelelő audit trail rendszerek fejlesztése.
+          </p>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+            Real-time production tracking in industrial environments, and development of audit trail systems compliant with strict pharmaceutical GMP regulations.
+          </p>
+        </div>
+
+        <div class="modern-card p-5 space-y-2">
+          <div class="text-xs font-mono text-zinc-400 dark:text-zinc-500">
+            <span data-i18n-hu>MENEDZSMENT</span>
+            <span data-i18n-en>MANAGEMENT</span>
+          </div>
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-hu>Üzleti és folyamatszemlélet</h3>
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100" data-i18n-en>Business &amp; Process Mindset</h3>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+            PTE KTK gazdálkodási és menedzsment háttér. Képes vagyok közvetlen kapcsolatot teremteni az üzleti döntéshozók céljai és a mérnöki megvalósítás között.
+          </p>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+            PTE KTK business administration and management background. I can create a direct connection between the goals of business decision-makers and engineering implementation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-title" class="space-y-6">
+      <header>
+        <h2 id="experience-title" class="text-xs font-mono font-medium uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          <span data-i18n-hu>02 &mdash; Szakmai Tapasztalat</span>
+          <span data-i18n-en>02 &mdash; Work Experience</span>
+        </h2>
+      </header>
+
+      <div class="space-y-6">
+        <article class="modern-card p-6 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+            <div>
+              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                Software Developer
+              </h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400" data-i18n-hu>Contrall Ipari Informatikai Kft. &bull; Pécs, Magyarország</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400" data-i18n-en>Contrall Ipari Informatikai Kft. &bull; Pécs, Hungary</p>
+            </div>
+            <time datetime="2022-01" class="text-xs font-mono text-zinc-500 shrink-0">
+              <span data-i18n-hu>2022. 01 &ndash; Jelenleg</span>
+              <span data-i18n-en>Jan 2022 &ndash; Present</span>
+            </time>
+          </div>
+
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+            Yii2 keretrendszerre épülő ipari MES (Manufacturing Execution System) rendszer fejlesztése és karbantartása. Egyedi Laravel fejlesztések szállítása ipari és gyógyszeripari partnerek számára a termelési folyamatok, a minőségbiztosítás és a működési hatékonyság digitalizálására.
+          </p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+            Development and maintenance of an industrial MES (Manufacturing Execution System) built on the Yii2 framework. Delivering custom Laravel developments for industrial and pharmaceutical partners to digitize production processes, quality assurance, and operational efficiency.
+          </p>
+
+          <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-zinc-600 dark:text-zinc-400">
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">Yii2</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">Laravel</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">DDD</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">PHP</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">MySQL</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">PostgreSQL</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">Docker</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">GitLab CI</span>
+          </div>
+        </article>
+
+        <article class="modern-card p-6 space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+            <div>
+              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                PHP Developer
+              </h3>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400" data-i18n-hu>Arteries Studio Kft. &bull; Pécs, Magyarország</p>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400" data-i18n-en>Arteries Studio Kft. &bull; Pécs, Hungary</p>
+            </div>
+            <time datetime="2013/2021-12" class="text-xs font-mono text-zinc-500 shrink-0">
+              <span data-i18n-hu>2013 &ndash; 2021. 12 (~9 év)</span>
+              <span data-i18n-en>2013 &ndash; Dec 2021 (~9 yrs)</span>
+            </time>
+          </div>
+
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+            Backend rendszerek és adatbázisok fejlesztése Laravel, WordPress és egyedi keretrendszer alapon landing page-ekhez, e-kereskedelmi portálokhoz és mobil alkalmazásokat kiszolgáló REST API-khoz. Frontend feladatok ellátása JavaScript, CSS/SASS és HTML technológiákkal.
+          </p>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+            Development of backend systems and databases based on Laravel, WordPress, and custom frameworks for landing pages, e-commerce portals, and REST APIs serving mobile applications. Handling frontend tasks using JavaScript, CSS/SASS, and HTML technologies.
+          </p>
+
+          <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-xs text-zinc-600 dark:text-zinc-400">
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">PHP</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">Laravel</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">WordPress</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">MySQL</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">REST API</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">JavaScript</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/70 px-2 py-0.5 dark:border-zinc-800 dark:bg-zinc-800/60">Git</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-title" class="space-y-6">
+      <header>
+        <h2 id="projects-title" class="text-xs font-mono font-medium uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          <span data-i18n-hu>03 &mdash; Kiemelt Projektek</span>
+          <span data-i18n-en>03 &mdash; Featured Projects</span>
+        </h2>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <article class="modern-card p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <span class="text-xs font-mono font-medium text-blue-600 dark:text-blue-400">
+              <span data-i18n-hu>Ipari IT &bull; Gyártásirányítás</span>
+              <span data-i18n-en>Industrial IT &bull; Manufacturing Execution</span>
+            </span>
+            <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              <span data-i18n-hu>Gyártásirányítási Rendszer (MES)</span>
+              <span data-i18n-en>Manufacturing Execution System (MES)</span>
+            </h3>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+              Gyártásirányítási, értékesítési és beléptető rendszer gép- és fémipari KKV partnerek számára. Valós idejű termeléskövetés, operátori terminálok és gép-ciklusidő elemzés.
+            </p>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+              Manufacturing execution, sales, and access control system for machinery and metalworking SME partners. Real-time production tracking, operator terminals, and machine cycle time analysis.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-zinc-100 dark:border-zinc-800/80 text-xs font-mono text-zinc-500">
+            Yii2 &bull; PHP &bull; MySQL &bull; Cypress &bull; Bootstrap &bull; PHPUnit
+          </div>
+        </article>
+
+        <article class="modern-card p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <span class="text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400">
+              <span data-i18n-hu>Gyógyszeripar &bull; Megfelelőség</span>
+              <span data-i18n-en>Pharmaceuticals &bull; Compliance</span>
+            </span>
+            <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              <span data-i18n-hu>Gyógyszerbiztonsági Minőségbiztosítási Rendszer</span>
+              <span data-i18n-en>Pharmaceutical Quality Assurance System</span>
+            </h3>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+              Gyógyszergyár belső minőségbiztosítási rendszere. Szigorú gyógyszeripari előírások (GMP / GxP), elektronikus audit trail, Active Directory (AD) autentikáció és jogosultságkezelés.
+            </p>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+              Internal quality assurance system for a pharmaceutical plant. Strict pharmaceutical regulations (GMP / GxP), electronic audit trail, Active Directory (AD) authentication, and access management.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-zinc-100 dark:border-zinc-800/80 text-xs font-mono text-zinc-500">
+            Laravel &bull; PostgreSQL &bull; Active Directory &bull; Audit Trail &bull; Docker
+          </div>
+        </article>
+
+        <article class="modern-card p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <span class="text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400">
+              <span data-i18n-hu>Vállalati Média &bull; CMS</span>
+              <span data-i18n-en>Corporate Media &bull; CMS</span>
+            </span>
+            <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              <span data-i18n-hu>Vezető Tanácsadó Cég (Big Four) Szakmai Blogja</span>
+              <span data-i18n-en>Leading Advisory Firm (Big Four) Professional Blog</span>
+            </h3>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+              Vezető nemzetközi tanácsadó cég hazai szakmai blogjának és tudásbázisának egyedi WordPress sablon- és bővítményfejlesztése, nagy látogatottságra optimalizálva.
+            </p>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+              Custom WordPress theme and plugin development for the domestic professional blog and knowledge base of a leading international advisory firm, optimized for high traffic.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-zinc-100 dark:border-zinc-800/80 text-xs font-mono text-zinc-500">
+            WordPress &bull; PHP &bull; SASS &bull; JavaScript
+          </div>
+        </article>
+
+        <article class="modern-card p-6 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <span class="text-xs font-mono font-medium text-amber-600 dark:text-amber-400">
+              <span data-i18n-hu>Egyedi Web &bull; E-kereskedelem</span>
+              <span data-i18n-en>Custom Web &bull; E-Commerce</span>
+            </span>
+            <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              <span data-i18n-hu>Egyedi KKV Rendszerek &amp; Webshopok</span>
+              <span data-i18n-en>Custom SME Systems &amp; Webshops</span>
+            </h3>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+              Több tucat hazai KKV számára készített egyedi webes alkalmazás, B2B/B2C webáruház és külső ERP/számlázó rendszerekkel összekapcsolt API integráció.
+            </p>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+              Custom web applications, B2B/B2C webshops, and API integrations connected to external ERP and invoicing systems created for dozens of domestic SMEs.
+            </p>
+          </div>
+          <div class="pt-2 border-t border-zinc-100 dark:border-zinc-800/80 text-xs font-mono text-zinc-500">
+            PHP &bull; Custom MVC &bull; Laravel &bull; MySQL &bull; REST API
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title" class="space-y-6">
+      <header>
+        <h2 id="skills-title" class="text-xs font-mono font-medium uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          <span data-i18n-hu>04 &mdash; Készségek &amp; Technológiai Verem</span>
+          <span data-i18n-en>04 &mdash; Skills &amp; Technology Stack</span>
+        </h2>
+      </header>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="modern-card p-5 space-y-3">
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <span data-i18n-hu>Backend &amp; Architektúra</span>
+            <span data-i18n-en>Backend &amp; Architecture</span>
+          </h3>
+          <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">PHP 8+</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">Laravel</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">Domain-Driven Design (DDD)</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">Yii2</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>RESTful API tervezés</span>
+              <span data-i18n-en>RESTful API Design</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>SOLID elvek</span>
+              <span data-i18n-en>SOLID Principles</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Active Directory hitelesítés</span>
+              <span data-i18n-en>Active Directory Authentication</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="modern-card p-5 space-y-3">
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <span data-i18n-hu>Adatbázisok &amp; DevOps</span>
+            <span data-i18n-en>Databases &amp; DevOps</span>
+          </h3>
+          <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">MySQL</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">PostgreSQL</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Adatbázis-normalizálás &amp; optimalizálás</span>
+              <span data-i18n-en>Database Normalization &amp; Optimization</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Migrációk &amp; seedelés</span>
+              <span data-i18n-en>Migrations &amp; Seeding</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">Docker</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">Git &amp; GitLab</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>CI/CD folyamatok</span>
+              <span data-i18n-en>CI/CD Pipelines</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Linux szerver alapok</span>
+              <span data-i18n-en>Linux Server Basics</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="modern-card p-5 space-y-3">
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <span data-i18n-hu>Tesztelés &amp; Frontend</span>
+            <span data-i18n-en>Testing &amp; Frontend</span>
+          </h3>
+          <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>PHPUnit (Unit tesztek)</span>
+              <span data-i18n-en>PHPUnit (Unit Tests)</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Cypress (E2E tesztek)</span>
+              <span data-i18n-en>Cypress (E2E Tests)</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Agilis szoftverfejlesztés</span>
+              <span data-i18n-en>Agile Software Development</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">JavaScript (ES6+)</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">HTML5 &amp; CSS3</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">SASS / SCSS</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">Bootstrap</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">Ionic Framework</span>
+          </div>
+        </div>
+
+        <div class="modern-card p-5 space-y-3">
+          <h3 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <span data-i18n-hu>Üzleti &amp; Menedzsment Ismeretek</span>
+            <span data-i18n-en>Business &amp; Management Skills</span>
+          </h3>
+          <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Vállalati pénzügyek</span>
+              <span data-i18n-en>Corporate Finance</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Folyamatmenedzsment</span>
+              <span data-i18n-en>Process Management</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Projektmenedzsment</span>
+              <span data-i18n-en>Project Management</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>Üzleti kommunikáció</span>
+              <span data-i18n-en>Business Communication</span>
+            </span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">Marketing</span>
+            <span class="rounded-md border border-zinc-200 bg-zinc-100/80 px-2 py-1 text-zinc-800 dark:border-zinc-800 dark:bg-zinc-800/80 dark:text-zinc-200">
+              <span data-i18n-hu>HR menedzsment</span>
+              <span data-i18n-en>HR Management</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" aria-labelledby="education-title" class="space-y-6">
+      <header>
+        <h2 id="education-title" class="text-xs font-mono font-medium uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          <span data-i18n-hu>05 &mdash; Tanulmányok &amp; Képzések</span>
+          <span data-i18n-en>05 &mdash; Education &amp; Qualifications</span>
+        </h2>
+      </header>
+
+      <div class="space-y-4">
+        <article class="modern-card p-6 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+                <span data-i18n-hu>Gazdálkodási és menedzsment alapszak (BSc)</span>
+                <span data-i18n-en>Business Administration and Management (BSc)</span>
+              </h3>
+              <span class="inline-flex rounded-full bg-amber-500/10 px-2 py-0.5 text-xs font-medium text-amber-600 dark:text-amber-400 font-mono">
+                <span data-i18n-hu>Folyamatban</span>
+                <span data-i18n-en>In Progress</span>
+              </span>
+            </div>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400">
+              <span data-i18n-hu>Pécsi Tudományegyetem, Közgazdaságtudományi Kar (PTE KTK)</span>
+              <span data-i18n-en>University of Pécs, Faculty of Business and Economics (PTE KTK)</span>
+            </p>
+            <p class="text-xs font-mono text-zinc-500">
+              <span data-i18n-hu>ISCED level 6 &bull; EQF level 6 (Alapképzés)</span>
+              <span data-i18n-en>ISCED level 6 &bull; EQF level 6 (Bachelor's Degree)</span>
+            </p>
+          </div>
+          <time datetime="2026" class="text-xs font-mono text-zinc-500 shrink-0">
+            2026 &ndash;
+          </time>
+        </article>
+
+        <article class="modern-card p-6 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+          <div class="space-y-1">
+            <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              Business Administration Assistant
+            </h3>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400">
+              <span data-i18n-hu>Pécsi Tudományegyetem, Közgazdaságtudományi Kar (PTE KTK)</span>
+              <span data-i18n-en>University of Pécs, Faculty of Business and Economics (PTE KTK)</span>
+            </p>
+            <p class="text-xs font-mono text-zinc-500">
+              <span data-i18n-hu>4 féléves felsőoktatási szakképzés (FOSZK) &bull; ISCED level 5 &bull; EQF level 5</span>
+              <span data-i18n-en>4-semester higher vocational training (FOSZK) &bull; ISCED level 5 &bull; EQF level 5</span>
+            </p>
+          </div>
+          <time datetime="2021/2023" class="text-xs font-mono text-zinc-500 shrink-0">
+            2021 &ndash; 2023
+          </time>
+        </article>
+
+        <article class="modern-card p-6 flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+          <div class="space-y-1">
+            <h3 class="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              <span data-i18n-hu>Webfejlesztő</span>
+              <span data-i18n-en>Web Developer</span>
+            </h3>
+            <p class="text-sm text-zinc-600 dark:text-zinc-400">
+              <span data-i18n-hu>Lia Alapítványi Szakközépiskola, Budapest</span>
+              <span data-i18n-en>Lia Foundation Vocational School, Budapest</span>
+            </p>
+            <p class="text-xs font-mono text-zinc-500">
+              <span data-i18n-hu>4 féléves érettségi utáni szakképzés &bull; ISCED level 4 &bull; EQF level 4/5</span>
+              <span data-i18n-en>4-semester post-secondary vocational qualification &bull; ISCED level 4 &bull; EQF level 4/5</span>
+            </p>
+          </div>
+          <time datetime="2011/2013" class="text-xs font-mono text-zinc-500 shrink-0">
+            2011 &ndash; 2013
+          </time>
+        </article>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+        <div class="modern-card p-5 space-y-1">
+          <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500" data-i18n-hu>EGYÉB KÉPZÉS</span>
+          <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500" data-i18n-en>OTHER TRAINING</span>
+          <h4 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">Digital finance training (2022)</h4>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400">
+            <span data-i18n-hu>Pécsi Tudományegyetem, Közgazdaságtudományi Kar (PTE KTK)</span>
+            <span data-i18n-en>University of Pécs, Faculty of Business and Economics (PTE KTK)</span>
+          </p>
+        </div>
+
+        <div class="modern-card p-5 space-y-1">
+          <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500" data-i18n-hu>NYELVTUDÁS</span>
+          <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500" data-i18n-en>LANGUAGES</span>
+          <h4 class="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+            <span data-i18n-hu>Magyar &bull; Angol B2</span>
+            <span data-i18n-en>Hungarian &bull; English B2</span>
+          </h4>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400" data-i18n-hu>Magyar (anyanyelv) &bull; Angol B2 felső-középfok (Euroexam, 2025)</p>
+          <p class="text-xs text-zinc-600 dark:text-zinc-400" data-i18n-en>Hungarian (native) &bull; English B2 upper-intermediate (Euroexam, 2025)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests" aria-labelledby="interests-title" class="space-y-4">
+      <header>
+        <h2 id="interests-title" class="text-xs font-mono font-medium uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+          <span data-i18n-hu>06 &mdash; Érdeklődési Körök</span>
+          <span data-i18n-en>06 &mdash; Interests</span>
+        </h2>
+      </header>
+      <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-hu>
+        Technológiai trendek és digitális eszközök &bull; Személyes pénzügyek és közgazdaságtan &bull; Asztronómia &bull; Pszichológia &bull; Külpolitika &bull; Fotózás
+      </p>
+      <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed" data-i18n-en>
+        Technology trends and digital tools &bull; Personal finance and economics &bull; Astronomy &bull; Psychology &bull; Foreign affairs &bull; Photography
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-zinc-200/80 dark:border-zinc-800/80 py-10 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+    <div class="mx-auto flex max-w-4xl flex-col sm:flex-row items-center justify-between gap-4 px-6">
+      <div>
+        &copy; 2026 Eszes Richárd &bull; <a href="#" class="email-link hover:text-zinc-900 dark:hover:text-zinc-100" data-u="richard" data-d="eszes.me"><span class="email-text"></span></a>
+      </div>
+      <div>
+        <a href="#top" class="hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors">
+          <span data-i18n-hu>&uarr; Vissza a lap tetejére</span>
+          <span data-i18n-en>&uarr; Back to top</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.min.js"></script>
+</body>
+</html>

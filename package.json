@@ -1,0 +1,15 @@
+{
+  "name": "eszes.me",
+  "version": "1.0.0",
+  "description": "Personal resume and portfolio website of Richárd Eszes",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "build:js": "terser js/main.js -c -m -o js/main.min.js",
+    "build": "npm run build:css && npm run build:js",
+    "watch": "tailwindcss -i ./src/input.css -o ./css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19",
+    "terser": "^5.46.0"
+  }
+}
