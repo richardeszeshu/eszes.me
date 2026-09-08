@@ -278,7 +278,7 @@ def generate_cv_for_lang(lang="en"):
         ]
         sec_projects = "Kiemelt Szakmai Projektek"
         projects = [
-            ("Új Generációs Gyártásirányítási Rendszer (MES 2.0)", "Laravel, DDD, PostgreSQL, Docker, REST API, Egyedi Sablon",
+            ("Új Generációs Gyártásirányítási Rendszer (MES 2.0)", "Laravel, DDD, PostgreSQL, Docker, REST API, AI, Egyedi Sablon",
              "A gyártásirányítási platform modern, Domain-Driven Design (DDD) alapú újraírása. Raktározás és készletkezelés, valós idejű gyártáskövetés, értékesítésmenedzsment, REST API és egyedi sablonarchitektúra."),
             ("Gyógyszerbiztonsági Minőségbiztosítási Rendszer", "Laravel, PostgreSQL, Active Directory, Audit Trail, Docker",
              "Kritikus belső minőségbiztosítási és folyamatvalidáló platform gyógyszergyár számára. Teljes GMP/GxP megfelelőség manipulációbiztos audit naplókkal és AD jogosultságkezeléssel."),
@@ -365,7 +365,7 @@ def generate_cv_for_lang(lang="en"):
         ]
         sec_projects = "Selected Key Projects &amp; Deliverables"
         projects = [
-            ("Next-Gen Manufacturing Execution System (MES 2.0)", "Laravel, DDD, PostgreSQL, Docker, REST API, Bespoke UI",
+            ("Next-Gen Manufacturing Execution System (MES 2.0)", "Laravel, DDD, PostgreSQL, Docker, REST API, AI, Bespoke UI",
              "Modern re-architecture of the manufacturing execution platform using Domain-Driven Design (DDD) principles. Comprehensive warehousing, real-time production tracking, sales lifecycle, and REST APIs."),
             ("Pharmaceutical QA &amp; Compliance System", "Laravel, PostgreSQL, Active Directory, Audit Trail, Docker",
              "Mission-critical internal QA and workflow validation platform for a pharmaceutical manufacturing plant. Compliant with strict GMP/GxP standards with tamper-evident audit logs and AD role management."),
