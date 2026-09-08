@@ -296,7 +296,7 @@ def generate_cv_for_lang(lang="en"):
             ("Gazdálkodási és menedzsment alapszak (BSc)", "2026 &ndash; Jelenleg (Folyamatban)",
              "Pécsi Tudományegyetem, Közgazdaságtudományi Kar (PTE KTK)",
              "Felsőfokú egyetemi alapképzés. Stratégiai menedzsment, vállalati pénzügyek, kontrolling és döntéstámogató rendszerek. ISCED level 6 &bull; EQF level 6"),
-            ("Business Administration Assistant", "2021 &ndash; 2023",
+            ("Felsőfokú gazdasági menedzser-asszistens", "2021 &ndash; 2023",
              "Pécsi Tudományegyetem, Közgazdaságtudományi Kar (PTE KTK)",
              "4 féléves felsőoktatási szakképzés (FOSZK). Vállalati gazdaságtan, pénzügyi alapok és üzleti adminisztráció. ISCED level 5 &bull; EQF level 5"),
             ("Webfejlesztő", "2011 &ndash; 2013",
