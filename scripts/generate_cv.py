@@ -245,15 +245,15 @@ def generate_cv_for_lang(lang="en"):
         sec_skills = "Készségek &amp; Technológiai Verem"
         skills_data = [
             [Paragraph("<b>Backend &amp; Architektúra:</b>", body_bold),
-             Paragraph("PHP 8+, <font color='#2563eb'><b>Laravel</b></font>, <font color='#2563eb'><b>Domain-Driven Design (DDD)</b></font>, Yii2, RESTful API tervezés, SOLID elvek, Active Directory hitelesítés", body_style)],
+             Paragraph("PHP 8+, <b>Laravel</b>, <b>Domain-Driven Design (DDD)</b>, Yii2, RESTful API tervezés, SOLID elvek, Active Directory hitelesítés", body_style)],
             [Paragraph("<b>Adatbázisok &amp; DevOps:</b>", body_bold),
-             Paragraph("<font color='#2563eb'><b>MySQL</b></font>, <font color='#2563eb'><b>PostgreSQL</b></font>, <font color='#2563eb'><b>Docker</b></font>, Adatbázis-normalizálás &amp; optimalizálás, Migrációk, Git, GitLab CI/CD, Linux", body_style)],
+             Paragraph("<b>MySQL</b>, <b>PostgreSQL</b>, <b>Docker</b>, Adatbázis-normalizálás &amp; optimalizálás, Migrációk, Git, GitLab CI/CD, Linux", body_style)],
             [Paragraph("<b>AI &amp; Fejlesztési Eszközök:</b>", body_bold),
-             Paragraph("<font color='#2563eb'><b>AI Coding Agents</b></font>, <font color='#2563eb'><b>Agentic Workflows</b></font>, <font color='#2563eb'><b>Spec-Driven Development (SDD)</b></font>, GitHub Spec-Kit, Prompt Engineering", body_style)],
+             Paragraph("<b>AI Coding Agents</b>, <b>Agentic Workflows</b>, <b>Spec-Driven Development (SDD)</b>, GitHub Spec-Kit, Prompt Engineering", body_style)],
             [Paragraph("<b>Tesztelés &amp; Minőség:</b>", body_bold),
-             Paragraph("<font color='#2563eb'><b>Cypress (E2E tesztek)</b></font>, <font color='#2563eb'><b>GMP előírások</b></font>, <font color='#2563eb'><b>Agilis szoftverfejlesztés / Scrum</b></font>, PHPUnit (Unit tesztek), Kódellenőrzés", body_style)],
+             Paragraph("<b>Cypress (E2E tesztek)</b>, <b>GMP előírások</b>, <b>Agilis szoftverfejlesztés / Scrum</b>, PHPUnit (Unit tesztek), Kódellenőrzés", body_style)],
             [Paragraph("<b>Frontend &amp; Mobil:</b>", body_bold),
-             Paragraph("<font color='#2563eb'><b>Ionic Framework (Mobilfejlesztés)</b></font>, <font color='#2563eb'><b>SASS / SCSS</b></font>, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Bootstrap, WordPress", body_style)],
+             Paragraph("<b>Ionic Framework (Mobilfejlesztés)</b>, <b>SASS / SCSS</b>, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Bootstrap, WordPress", body_style)],
             [Paragraph("<b>Üzlet &amp; Menedzsment:</b>", body_bold),
              Paragraph("Vállalati pénzügyek, Folyamatmenedzsment, Projektmenedzsment, Üzleti kommunikáció, HR menedzsment", body_style)],
         ]
@@ -332,15 +332,15 @@ def generate_cv_for_lang(lang="en"):
         sec_skills = "Skills &amp; Technology Stack"
         skills_data = [
             [Paragraph("<b>Backend &amp; Architecture:</b>", body_bold),
-             Paragraph("PHP 8+, <font color='#2563eb'><b>Laravel</b></font>, <font color='#2563eb'><b>Domain-Driven Design (DDD)</b></font>, Yii2, RESTful API Design, SOLID Principles, Active Directory Auth", body_style)],
+             Paragraph("PHP 8+, <b>Laravel</b>, <b>Domain-Driven Design (DDD)</b>, Yii2, RESTful API Design, SOLID Principles, Active Directory Auth", body_style)],
             [Paragraph("<b>Databases &amp; DevOps:</b>", body_bold),
-             Paragraph("<font color='#2563eb'><b>MySQL</b></font>, <font color='#2563eb'><b>PostgreSQL</b></font>, <font color='#2563eb'><b>Docker</b></font>, Database Normalization &amp; Optimization, Migrations, Git, GitLab CI/CD, Linux", body_style)],
+             Paragraph("<b>MySQL</b>, <b>PostgreSQL</b>, <b>Docker</b>, Database Normalization &amp; Optimization, Migrations, Git, GitLab CI/CD, Linux", body_style)],
             [Paragraph("<b>AI &amp; Developer Tooling:</b>", body_bold),
-             Paragraph("<font color='#2563eb'><b>AI Coding Agents</b></font>, <font color='#2563eb'><b>Agentic Workflows</b></font>, <font color='#2563eb'><b>Spec-Driven Development (SDD)</b></font>, GitHub Spec-Kit, Prompt Engineering", body_style)],
+             Paragraph("<b>AI Coding Agents</b>, <b>Agentic Workflows</b>, <b>Spec-Driven Development (SDD)</b>, GitHub Spec-Kit, Prompt Engineering", body_style)],
             [Paragraph("<b>Testing &amp; Quality:</b>", body_bold),
-             Paragraph("<font color='#2563eb'><b>Cypress (E2E Testing)</b></font>, <font color='#2563eb'><b>GMP / GxP Compliance</b></font>, <font color='#2563eb'><b>Agile / Scrum</b></font>, PHPUnit (Unit Testing), Code Reviews", body_style)],
+             Paragraph("<b>Cypress (E2E Testing)</b>, <b>GMP / GxP Compliance</b>, <b>Agile / Scrum</b>, PHPUnit (Unit Testing), Code Reviews", body_style)],
             [Paragraph("<b>Frontend &amp; Mobile:</b>", body_bold),
-             Paragraph("<font color='#2563eb'><b>Ionic Framework (Mobile Development)</b></font>, <font color='#2563eb'><b>SASS / SCSS</b></font>, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Bootstrap, WordPress", body_style)],
+             Paragraph("<b>Ionic Framework (Mobile Development)</b>, <b>SASS / SCSS</b>, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Bootstrap, WordPress", body_style)],
             [Paragraph("<b>Business &amp; Management:</b>", body_bold),
              Paragraph("Corporate Finance, Process Management, Project Leadership, Business Communication, HR Management", body_style)],
         ]
