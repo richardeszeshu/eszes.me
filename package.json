@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Personal resume and portfolio website of Richárd Eszes",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "build:css": "tailwindcss -i ./css/style.css -o ./css/style.min.css --minify",
     "build:js": "terser js/main.js -c -m -o js/main.min.js",
+    "build:favicon": "PYTHONPATH=./python_modules python3 scripts/generate_favicons.py",
     "build:cv": "PYTHONPATH=./python_modules python3 scripts/generate_cv.py",
-    "build": "npm run build:css && npm run build:js && npm run build:cv",
-    "watch": "tailwindcss -i ./src/input.css -o ./css/style.css --watch"
+    "build": "npm run build:css && npm run build:js && npm run build:favicon && npm run build:cv",
+    "watch": "tailwindcss -i ./css/style.css -o ./css/style.min.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.19",

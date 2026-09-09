@@ -88,7 +88,8 @@ def create_circular_avatar(input_path, output_path, size=(240, 240)):
     w, h = img.size
     min_dim = min(w, h)
     left = (w - min_dim) // 2
-    top = (h - min_dim) // 2
+    # 30% vertical offset for portrait photos
+    top = int((h - min_dim) * 0.30) if h > w else (h - min_dim) // 2
     img_cropped = img.crop((left, top, left + min_dim, top + min_dim))
     img_resized = img_cropped.resize(size, PILImage.Resampling.LANCZOS)
     
@@ -98,7 +99,7 @@ def create_circular_avatar(input_path, output_path, size=(240, 240)):
     
     output = PILImage.new('RGBA', size, (255, 255, 255, 0))
     output.paste(img_resized, (0, 0), mask=mask)
-    output.save(output_path, "PNG")
+    output.save(output_path, "PNG", optimize=True)
 
 def generate_cv_for_lang(lang="en"):
     os.makedirs("assets/cv", exist_ok=True)
