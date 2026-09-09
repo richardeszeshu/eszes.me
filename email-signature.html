@@ -3,186 +3,367 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eszes Richárd &mdash; E-mail Aláírás Sablonok</title>
+  <title>Eszes Richárd &mdash; E-mail Aláírások (Apple Mail / iMail)</title>
   <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --accent: #2563eb;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #f4f4f5;
-      color: #18181b;
+      background-color: var(--bg);
+      color: var(--text);
       margin: 0;
-      padding: 40px 20px;
+      padding: 40px 20px 80px;
     }
     .container {
-      max-width: 680px;
+      max-width: 740px;
       margin: 0 auto;
     }
     h1 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 8px;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      color: #0f172a;
     }
     p.desc {
       font-size: 14px;
-      color: #52525b;
+      color: var(--muted);
       margin-top: 0;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       line-height: 1.5;
     }
     .card {
-      background: #ffffff;
-      border: 1px solid #e4e4e7;
-      border-radius: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 28px;
-      margin-bottom: 28px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
     }
     .card-title {
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #71717a;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+    .tag-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(37, 99, 235, 0.1);
+      color: var(--accent);
+    }
+    .signature-preview {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px dashed #cbd5e1;
       margin-bottom: 16px;
     }
     .instructions {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 16px 20px;
-      font-size: 13px;
-      color: #334155;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      font-size: 13.5px;
       line-height: 1.6;
+      color: #334155;
+      margin-top: 40px;
+    }
+    .instructions h2 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 14px;
+      color: #0f172a;
+    }
+    .instructions h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      color: var(--accent);
     }
     .instructions ol {
       margin: 8px 0 0;
-      padding-left: 20px;
+      padding-left: 22px;
     }
     .instructions li {
-      margin-bottom: 6px;
+      margin-bottom: 10px;
+    }
+    code {
+      font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #0f172a;
+      border: 1px solid #e2e8f0;
+    }
+    .code-block {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: ui-monospace, Menlo, monospace;
+      font-size: 12px;
+      overflow-x: auto;
+      margin: 8px 0;
+    }
+    .tip-box {
+      background: rgba(37, 99, 235, 0.06);
+      border-left: 3px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0;
+      font-size: 13px;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Eszes Richárd &mdash; Apple Mail (iMail) Aláírások</h1>
-    <p class="desc">A weboldal (<a href="https://eszes.me" target="_blank" style="color: #2563eb; text-decoration: none;">eszes.me</a>) arculatához igazított, professzionális e-mail aláírások. Válaszd ki a számodra legszimpatikusabbat!</p>
+    <h1>Eszes Richárd &mdash; Apple Mail Aláírás Sablonok</h1>
+    <p class="desc">A megújult <a href="https://eszes.me" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">eszes.me</a> vCard arculathoz illeszkedő, mobil- és asztali kliensekkel (Apple Mail, Gmail, Outlook) maximálisan kompatibilis e-mail aláírások.</p>
 
-    <!-- VARIÁCIÓ 1: PRÉMIUM KÉPES VÁLTOZAT -->
+    <!-- 1. VÁLTOZAT: PRÉMIUM VCARD KÁRTYA PROFILFOTÓVAL -->
     <div class="card">
-      <div class="card-title">1. Változat: Prémium kártya profilfotóval (Ajánlott)</div>
+      <div class="card-header">
+        <div>
+          <div class="card-title">1. Változat: Modern vCard Kártya (Profilfotóval)</div>
+          <div style="font-size: 12px; margin-top: 4px;"><a href="signature/signature-1-photo.html" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">&rarr; signature/signature-1-photo.html</a></div>
+        </div>
+        <span class="tag-badge">Ajánlott &bull; eszes.me stílus</span>
+      </div>
       
-      <!-- START SIGNATURE 1 -->
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.4; color: #18181b; max-width: 500px;">
-        <tr>
-          <td style="padding-bottom: 12px; font-size: 13px; color: #52525b;">
-            Üdvözlettel / Regards,
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <table cellpadding="0" cellspacing="0" border="0">
-              <tr>
-                <td valign="top" style="padding-right: 16px; vertical-align: top;">
-                  <a href="https://eszes.me" target="_blank" style="text-decoration: none; display: block;">
-                    <img src="https://eszes.me/assets/images/avatar_circle.png" alt="Richárd Eszes" width="60" height="60" style="width: 60px; height: 60px; display: block; border-radius: 50%; border: 0;">
-                  </a>
-                </td>
-                <td valign="top" style="border-left: 2px solid #e4e4e7; padding-left: 16px; vertical-align: top;">
-                  <table cellpadding="0" cellspacing="0" border="0">
-                    <tr>
-                      <td style="font-size: 15px; font-weight: 700; color: #18181b; letter-spacing: -0.01em; padding-bottom: 2px;">
-                        RICHÁRD ESZES
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="font-size: 12px; font-weight: 600; color: #2563eb; text-transform: uppercase; letter-spacing: 0.04em; padding-bottom: 8px;">
-                        Backend Developer &bull; Software Architecture
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="font-size: 12px; color: #52525b; line-height: 1.6;">
-                        <div>
-                          <span style="color: #71717a; font-size: 11px; font-family: ui-monospace, Menlo, Consolas, monospace; text-transform: uppercase;">E-mail:</span>&nbsp;
-                          <a href="mailto:richard.eszes@icloud.com" style="color: #18181b; text-decoration: none; font-weight: 500;">richard.eszes@icloud.com</a>
-                        </div>
-                        <div>
-                          <span style="color: #71717a; font-size: 11px; font-family: ui-monospace, Menlo, Consolas, monospace; text-transform: uppercase;">Phone:</span>&nbsp;
-                          <a href="tel:+36305339792" style="color: #18181b; text-decoration: none; font-weight: 500;">+36 30 533 9792</a>
-                        </div>
-                        <div>
-                          <span style="color: #71717a; font-size: 11px; font-family: ui-monospace, Menlo, Consolas, monospace; text-transform: uppercase;">Drive:</span>&nbsp;
-                          <span style="color: #3f3f46;">richard.eszes.hu@gmail.com</span>
-                        </div>
-                        <div style="padding-top: 6px; font-size: 11px;">
-                          <a href="https://eszes.me" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">eszes.me</a>
-                          <span style="color: #d4d4d8; padding: 0 5px;">&bull;</span>
-                          <a href="https://www.linkedin.com/in/richardeszes/" target="_blank" style="color: #52525b; text-decoration: none; font-weight: 500;">LinkedIn</a>
-                          <span style="color: #d4d4d8; padding: 0 5px;">&bull;</span>
-                          <a href="https://github.com/richardeszeshu" target="_blank" style="color: #52525b; text-decoration: none; font-weight: 500;">GitHub</a>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
-      <!-- END SIGNATURE 1 -->
-
+      <div class="signature-preview">
+        <!-- START SIGNATURE 1 -->
+        <table cellpadding="0" cellspacing="0" border="0" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.4; color: #1e293b; max-width: 520px;">
+          <tr>
+            <td style="padding-bottom: 14px; font-size: 13px; color: #64748b;">
+              Üdvözlettel / Best regards,
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td valign="top" style="padding-right: 18px; vertical-align: top;">
+                    <a href="https://eszes.me" target="_blank" style="text-decoration: none; display: block;">
+                      <img src="https://eszes.me/assets/images/profile.jpg" alt="Eszes Richárd" width="76" height="76" style="width: 76px; height: 76px; display: block; border-radius: 16px; border: 1px solid #e2e8f0; object-fit: cover;">
+                    </a>
+                  </td>
+                  <td valign="top" style="border-left: 2px solid #2563eb; padding-left: 18px; vertical-align: top;">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="font-size: 16px; font-weight: 700; color: #0f172a; letter-spacing: -0.01em; padding-bottom: 2px;">
+                          Eszes <span style="color: #2563eb;">Richárd</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="font-size: 12px; font-weight: 600; color: #475569; padding-bottom: 10px;">
+                          Senior Software Developer &bull; <span style="color: #2563eb;">Backend Architecture</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="font-size: 12px; color: #64748b; line-height: 1.6;">
+                          <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <td style="padding-right: 8px; color: #94a3b8; font-size: 11px; font-weight: 600; text-transform: uppercase;">Email:</td>
+                              <td><a href="mailto:richard@eszes.me" style="color: #0f172a; text-decoration: none; font-weight: 500;">richard@eszes.me</a></td>
+                            </tr>
+                            <tr>
+                              <td style="padding-right: 8px; color: #94a3b8; font-size: 11px; font-weight: 600; text-transform: uppercase;">Tel:</td>
+                              <td><a href="tel:+36305339792" style="color: #0f172a; text-decoration: none; font-weight: 500;">+36 30 533 9792</a></td>
+                            </tr>
+                            <tr>
+                              <td style="padding-right: 8px; color: #94a3b8; font-size: 11px; font-weight: 600; text-transform: uppercase;">Web:</td>
+                              <td><a href="https://eszes.me" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">eszes.me</a></td>
+                            </tr>
+                            <tr>
+                              <td style="padding-right: 8px; color: #94a3b8; font-size: 11px; font-weight: 600; text-transform: uppercase;">Hely:</td>
+                              <td style="color: #475569;">Pécs, Magyarország</td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding-top: 10px; font-size: 11px; font-weight: 500;">
+                          <a href="https://www.linkedin.com/in/richardeszes/" target="_blank" style="color: #2563eb; text-decoration: none;">LinkedIn</a>
+                  <span style="color: #cbd5e1; padding: 0 6px;">&bull;</span>
+                  <a href="https://www.flickr.com/photos/richardeszes/" target="_blank" style="color: #64748b; text-decoration: none;">Flickr</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- END SIGNATURE 1 -->
+      </div>
     </div>
 
-    <!-- VARIÁCIÓ 2: LETISZTULT MINIMALISTA (KÉP NÉLKÜLI) -->
+    <!-- 2. VÁLTOZAT: MONOGRAMOS FEKETE BADGE -->
     <div class="card">
-      <div class="card-title">2. Változat: Minimalista & Tömör (Kép nélkül)</div>
+      <div class="card-header">
+        <div>
+          <div class="card-title">2. Változat: Monogramos („re” Squircle Ikonnal)</div>
+          <div style="font-size: 12px; margin-top: 4px;"><a href="signature/signature-2-monogram.html" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">&rarr; signature/signature-2-monogram.html</a></div>
+        </div>
+        <span class="tag-badge">Favicon &amp; Minimal Brand</span>
+      </div>
       
-      <!-- START SIGNATURE 2 -->
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.4; color: #18181b; max-width: 460px;">
-        <tr>
-          <td style="padding-bottom: 12px; font-size: 13px; color: #52525b;">
-            Üdvözlettel / Regards,
-          </td>
-        </tr>
-        <tr>
-          <td style="border-left: 2px solid #2563eb; padding-left: 12px;">
-            <div style="font-size: 14px; font-weight: 700; color: #18181b; letter-spacing: -0.01em;">
-              RICHÁRD ESZES
-            </div>
-            <div style="font-size: 12px; font-weight: 500; color: #52525b; margin-top: 1px; margin-bottom: 8px;">
-              Backend Developer &bull; <a href="https://eszes.me" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">eszes.me</a>
-            </div>
-            <div style="font-size: 12px; color: #52525b; line-height: 1.6;">
-              <div><span style="color: #71717a; font-size: 11px; font-family: ui-monospace, Menlo, Consolas, monospace;">M:</span> <a href="mailto:richard.eszes@icloud.com" style="color: #18181b; text-decoration: none; font-weight: 500;">richard.eszes@icloud.com</a></div>
-              <div><span style="color: #71717a; font-size: 11px; font-family: ui-monospace, Menlo, Consolas, monospace;">T:</span> <a href="tel:+36305339792" style="color: #18181b; text-decoration: none; font-weight: 500;">+36 30 533 9792</a></div>
-              <div><span style="color: #71717a; font-size: 11px; font-family: ui-monospace, Menlo, Consolas, monospace;">G:</span> <span style="color: #3f3f46;">richard.eszes.hu@gmail.com</span> (Google Drive)</div>
-            </div>
-            <div style="margin-top: 6px; font-size: 11px;">
-              <a href="https://www.linkedin.com/in/richardeszes/" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 500;">LinkedIn</a>
-              <span style="color: #d4d4d8; padding: 0 4px;">&bull;</span>
-              <a href="https://github.com/richardeszeshu" target="_blank" style="color: #52525b; text-decoration: none;">GitHub</a>
-            </div>
-          </td>
-        </tr>
-      </table>
-      <!-- END SIGNATURE 2 -->
-
+      <div class="signature-preview">
+        <!-- START SIGNATURE 2 -->
+        <table cellpadding="0" cellspacing="0" border="0" style="font-family: -apple-system, BlinkMacSystemFont, '''Segoe UI''', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.4; color: #1e293b; max-width: 500px;">
+          <tr>
+            <td style="padding-bottom: 12px; font-size: 13px; color: #64748b;">
+              Üdvözlettel / Best regards,
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td valign="top" style="padding-right: 16px; vertical-align: top;">
+                    <a href="https://eszes.me" target="_blank" style="text-decoration: none; display: block;">
+                      <!-- Fekete lekerekített squircle fehér "re" monogrammal -->
+                      <table cellpadding="0" cellspacing="0" border="0" width="56" height="56" style="width: 56px; height: 56px; background-color: #000000; border-radius: 14px; text-align: center;">
+                        <tr>
+                          <td align="center" valign="middle" style="font-family: ui-monospace, Menlo, Monaco, Consolas, monospace; font-size: 24px; font-weight: 700; color: #ffffff; line-height: 56px; text-align: center;">
+                            re
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                  <td valign="top" style="border-left: 2px solid #2563eb; padding-left: 16px; vertical-align: top;">
+                    <div style="font-size: 15px; font-weight: 700; color: #0f172a; letter-spacing: -0.01em;">
+                      Eszes <span style="color: #2563eb;">Richárd</span>
+                    </div>
+                    <div style="font-size: 12px; font-weight: 600; color: #475569; margin-top: 2px; margin-bottom: 8px;">
+                      Senior Software Developer &bull; <a href="https://eszes.me" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">eszes.me</a>
+                    </div>
+                    <div style="font-size: 12px; color: #64748b; line-height: 1.6;">
+                      <div><span style="color: #94a3b8; font-size: 11px; font-weight: 600;">E:</span> <a href="mailto:richard@eszes.me" style="color: #0f172a; text-decoration: none; font-weight: 500;">richard@eszes.me</a></div>
+                      <div><span style="color: #94a3b8; font-size: 11px; font-weight: 600;">T:</span> <a href="tel:+36305339792" style="color: #0f172a; text-decoration: none; font-weight: 500;">+36 30 533 9792</a></div>
+                    </div>
+                    <div style="margin-top: 8px; font-size: 11px; font-weight: 500;">
+                      <a href="https://www.linkedin.com/in/richardeszes/" target="_blank" style="color: #2563eb; text-decoration: none;">LinkedIn</a>
+                  <span style="color: #cbd5e1; padding: 0 6px;">&bull;</span>
+                  <a href="https://www.flickr.com/photos/richardeszes/" target="_blank" style="color: #64748b; text-decoration: none;">Flickr</a>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <!-- END SIGNATURE 2 -->
+      </div>
     </div>
 
-    <!-- BEÁLLÍTÁSI ÚTMUTATÓ APPLE MAIL-HEZ -->
+    <!-- 3. VÁLTOZAT: LETISZTULT MINIMALISTA -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">3. Változat: Kompakt Vonalas (Kép nélkül)</div>
+          <div style="font-size: 12px; margin-top: 4px;"><a href="signature/signature-3-minimal.html" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">&rarr; signature/signature-3-minimal.html</a></div>
+        </div>
+        <span class="tag-badge">Tömör &bull; Szöveges</span>
+      </div>
+      
+      <div class="signature-preview">
+        <!-- START SIGNATURE 3 -->
+        <table cellpadding="0" cellspacing="0" border="0" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.4; color: #1e293b; max-width: 480px;">
+          <tr>
+            <td style="padding-bottom: 12px; font-size: 13px; color: #64748b;">
+              Üdvözlettel / Best regards,
+            </td>
+          </tr>
+          <tr>
+            <td style="border-left: 2px solid #2563eb; padding-left: 14px;">
+              <div style="font-size: 15px; font-weight: 700; color: #0f172a;">
+                Eszes <span style="color: #2563eb;">Richárd</span>
+              </div>
+              <div style="font-size: 12px; font-weight: 600; color: #475569; margin-top: 2px; margin-bottom: 8px;">
+                Senior Software Developer &bull; <a href="https://eszes.me" target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600;">eszes.me</a>
+              </div>
+              <div style="font-size: 12px; color: #64748b; line-height: 1.6;">
+                <span style="color: #0f172a; font-weight: 500;"><a href="mailto:richard@eszes.me" style="color: #0f172a; text-decoration: none;">richard@eszes.me</a></span>
+                <span style="color: #cbd5e1; padding: 0 6px;">&bull;</span>
+                <span style="color: #0f172a;"><a href="tel:+36305339792" style="color: #0f172a; text-decoration: none;">+36 30 533 9792</a></span>
+                <span style="color: #cbd5e1; padding: 0 6px;">&bull;</span>
+                <span>Pécs, HU</span>
+              </div>
+              <div style="margin-top: 6px; font-size: 11px; font-weight: 500;">
+                <a href="https://www.linkedin.com/in/richardeszes/" target="_blank" style="color: #2563eb; text-decoration: none;">LinkedIn</a>
+                  <span style="color: #cbd5e1; padding: 0 6px;">&bull;</span>
+                  <a href="https://www.flickr.com/photos/richardeszes/" target="_blank" style="color: #64748b; text-decoration: none;">Flickr</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <!-- END SIGNATURE 3 -->
+      </div>
+    </div>
+
+    <!-- ÚTMUTATÓ AZ APPLE MAIL BEÁLLÍTÁSÁHOZ -->
     <div class="instructions">
-      <strong style="color: #0f172a; font-size: 14px;">Hogyan állítsd be Apple Mail-ben (macOS):</strong>
+      <h2>Hogyan állítsd be az aláírást Apple Mail-ben (macOS):</h2>
+      
+      <h3>A) Módszer: Egyszerű másolás Safari böngészőből (Gyors és kényelmes)</h3>
       <ol>
-        <li>Jelöld ki a fenti kártyák közül a szimpatikus aláírást (az <i>„Üdvözlettel / Regards,”</i> sortól a linkek végéig), és másold ki: <code>Cmd + C</code>.</li>
-        <li>Nyisd meg a <strong>Mail</strong> alkalmazást a Macen.</li>
-        <li>A menüsorban kattints: <strong>Mail &rarr; Beállítások... (Settings)</strong>, majd válaszd az <strong>Aláírások (Signatures)</strong> lapot.</li>
-        <li>Válaszd ki az e-mail fiókodat a bal oldali listában, majd kattints a <strong>[ + ]</strong> gombra egy új aláírás létrehozásához.</li>
-        <li><strong>FONTOS LÉPÉS:</strong> A lap alján <u>vedd ki a pipát</u> a <em>„Mindig az alapértelmezett üzenet betűtípusának használata” (Always match my default message font)</em> opció elől!</li>
-        <li>Kattints a jobb oldali szerkesztőmezőbe, jelöld ki a benne lévő alapértelmezett szöveget (<code>Cmd + A</code>), és illeszd be a vágólap tartalmát: <code>Cmd + V</code>.</li>
-        <li>Zárd be a beállításokat. Kész is vagy!</li>
+        <li>Nyisd meg ezt a fájlt (<code>email-signature.html</code>) a <strong>Safari</strong> böngészőben.</li>
+        <li>Az egérrel jelöld ki a fenti keretek közül a kívánt aláírást (az <em>„Üdvözlettel / Best regards,”</em> szövegtől a linkek aljáig), majd nyomj <code>Cmd + C</code> billentyűt.</li>
+        <li>Nyisd meg a Macen a <strong>Mail</strong> alkalmazást.</li>
+        <li>A felső menüben kattints: <strong>Mail &rarr; Beállítások... (Settings / Preferences)</strong>, majd kattints az <strong>Aláírások (Signatures)</strong> fülre.</li>
+        <li>A bal oldali oszlopban válaszd ki a postafiókodat (pl. iCloud vagy eszes.me), majd a középső oszlop alatt kattints a <strong>[ + ]</strong> gombra.</li>
+        <li><strong style="color: #e11d48;">FONTOS LÉPÉS:</strong> A jobb oldali szerkesztőmező alatt <u>vedd ki a pipát</u> a <em>„Mindig az alapértelmezett üzenet betűtípusának használata” (Always match my default message font)</em> opció mellől!</li>
+        <li>Kattints a jobb oldali szerkesztőbe, jelöld ki a benne lévő alapértelmezett szöveget (<code>Cmd + A</code>), és nyomj <code>Cmd + V</code>-t a beillesztéshez.</li>
+        <li>Zárd be a beállítások ablakot &mdash; az aláírás azonnal működik új levél írásakor.</li>
+      </ol>
+
+      <h3>B) Módszer: Közvetlen HTML fájl injektálása (Profi módszer &bull; .mailsignature)</h3>
+      <p>Ez a módszer 100%-ban garantálja, hogy a Mail beépített szerkesztője semmit ne torzítson a HTML forráskódon.</p>
+      <ol>
+        <li>Nyisd meg a <strong>Mail</strong> appot &rarr; <strong>Beállítások &rarr; Aláírások</strong>.</li>
+        <li>Hozz létre egy új aláírást a <strong>[ + ]</strong> gombbal (neve legyen pl. <code>eszes-signature</code>), írj bele bármilyen mintaszöveget, majd <strong>zárd be teljesen a Mail alkalmazást (Cmd + Q)</strong>.</li>
+        <li>Nyisd meg a <strong>Finder</strong>-t, nyomd le a <code>Cmd + Shift + G</code> gombot, és illeszd be ezt a mappát:
+          <div class="code-block">~/Library/Mail/V10/MailData/Signatures/</div>
+          <em>(Megjegyzés: macOS verziótól függően a mappa neve lehet V9 vagy V10. Ha iCloud Drive-on szinkronizál a Mail, akkor: <code>~/Library/Mobile Documents/com~apple~mail/Data/V10/Signatures/</code>)</em>
+        </li>
+        <li>Rendezd a fájlokat módosítási dátum szerint: a legfrissebb <code>.mailsignature</code> kiterjesztésű fájl lesz az, amit az előbb létrehoztál.</li>
+        <li>Nyisd meg ezt a fájlt egy szövegszerkesztővel (pl. TextEdit plain text módban, VS Code, vagy terminálban <code>nano</code>).</li>
+        <li><div class="tip-box"><strong>FIGYELEM:</strong> A fájl legtetején lévő MIME fejléceket (Message-Id, Content-Type, stb. kb. az első 4-5 sort) <strong>HAGYD MEG</strong>! Csak a fejlécek után lévő tartalmat cseréld le a projektben található <code>signature.html</code> fájl tartalmára.</div></li>
+        <li>Mentsd el a fájlt.</li>
+        <li><strong>ZÁROLD A FÁJLT (fontos, különben a Mail felülírja):</strong>
+          <br>A Finderben jobb klikk a <code>.mailsignature</code> fájlra &rarr; <strong>Infó mutatása (Get Info)</strong> &rarr; pipáld be a <strong>Zárolva (Locked)</strong> jelölőnégyzetet.
+          <br>Vagy Terminalban futtasd:
+          <div class="code-block">chflags uchg ~/Library/Mail/V10/MailData/Signatures/&lt;fájlnév&gt;.mailsignature</div>
+        </li>
+        <li>Indítsd el újra a Mail appot. Az aláírásod mostantól a pixelpontos, tiszta HTML kódból töltődik be!</li>
       </ol>
     </div>
+
   </div>
 
 </body>
