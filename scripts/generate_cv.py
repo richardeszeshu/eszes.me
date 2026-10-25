@@ -259,7 +259,7 @@ def generate_cv_for_lang(lang="en"):
              Paragraph("Vállalati pénzügyek, Folyamatmenedzsment, Projektmenedzsment, Üzleti kommunikáció, HR menedzsment", body_style)],
         ]
         sec_experience = "Szakmai Tapasztalat"
-        p1_title = "Software Developer &mdash; <b>Contrall Ipari Informatikai Kft.</b>"
+        p1_title = "Software Developer &mdash; <b>Contrall ISS ZRt.</b> (korábban Contrall Ipari Informatikai Kft.)"
         p1_meta = "2022. 01 &ndash; Jelenleg | Pécs, Magyarország"
         p1_bullets = [
             "&bull; <b>Ipari MES fejlesztés:</b> Yii2 alapú gyártásirányítási rendszer (MES) fejlesztése és karbantartása gép- és fémipari KKV partnerek számára; valós idejű termeléskövetés, operátori terminálok, gép-ciklusidő elemzés és gyári beléptetés.",
@@ -346,7 +346,7 @@ def generate_cv_for_lang(lang="en"):
              Paragraph("Corporate Finance, Process Management, Project Leadership, Business Communication, HR Management", body_style)],
         ]
         sec_experience = "Work Experience"
-        p1_title = "Software Developer &mdash; <b>Contrall Ipari Informatikai Kft.</b>"
+        p1_title = "Software Developer &mdash; <b>Contrall ISS ZRt.</b> (formerly Contrall Ipari Informatikai Kft.)"
         p1_meta = "Jan 2022 &ndash; Present | Pécs, Hungary"
         p1_bullets = [
             "&bull; <b>Industrial MES Engineering:</b> Develop and maintain a Yii2-based Manufacturing Execution System (MES) helping machinery and metalworking SMEs digitize job tracking, machine cycle times, operator workflows, and facility access control.",
